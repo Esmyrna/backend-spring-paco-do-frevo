@@ -63,7 +63,7 @@ public class Association {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "association_address_id")
-    private AssociationAd address;
+    private AssociationAddresses address;
 
     @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SocialNetwork> socialNetworks;

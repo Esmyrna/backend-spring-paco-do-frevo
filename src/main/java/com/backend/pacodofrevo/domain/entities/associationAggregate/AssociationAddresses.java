@@ -13,8 +13,8 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "associations-adress")
-public class AssociationAd {
+@Table(name = "associations-addresses")
+public class AssociationAddresses {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", columnDefinition = "uuid")
