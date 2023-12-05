@@ -20,5 +20,9 @@ public class PhoneNumber {
     private String createdBy;
     private String updatedBy;
 
+    @ManyToOne
+    @JoinColumn(name = "contactId", insertable = false, updatable = false)
+    private Contact contact;
+
 
 }
