@@ -1,4 +1,4 @@
-package com.backend.pacodofrevo.domain.services;
+package com.backend.pacodofrevo.domain.usecases;
 
 import com.backend.pacodofrevo.domain.entities.associationAggregate.Association;
 
