@@ -2,6 +2,7 @@ package com.backend.pacodofrevo.infra.repositories.controllers;
 
 import com.backend.pacodofrevo.domain.entities.associationAggregate.Association;
 import com.backend.pacodofrevo.domain.services.AssociationServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 public class AssociationController {
     private final AssociationServiceImpl associationService;
-
+    @Autowired
     public AssociationController(AssociationServiceImpl associationService) {
         this.associationService = associationService;
     }
