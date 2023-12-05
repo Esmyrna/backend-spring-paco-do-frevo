@@ -33,5 +33,75 @@ public class Event {
     private String createdBy;
     private String updatedBy;
 
-  
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
+    public Date getDateOfAccomplishment() {
+        return dateOfAccomplishment;
+    }
+
+    public void setDateOfAccomplishment(Date dateOfAccomplishment) {
+        this.dateOfAccomplishment = dateOfAccomplishment;
+    }
+
+    public int getParticipantsAmount() {
+        return participantsAmount;
+    }
+
+    public void setParticipantsAmount(int participantsAmount) {
+        this.participantsAmount = participantsAmount;
+    }
+
+    public String getAssociationId() {
+        return associationId;
+    }
+
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
 }
