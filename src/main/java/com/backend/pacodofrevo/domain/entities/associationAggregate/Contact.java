@@ -22,19 +22,19 @@ public class Contact {
     private String addressTo;
 
     private String email;
- 
+    
+    @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
     private List<PhoneNumber> phoneNumbers;
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
     private String createdBy;
 
     private String updatedBy;
- 
+    @OneToOne
+    @JoinColumn(name = "associationId")
     private Association association;
 
     private String associationId;
