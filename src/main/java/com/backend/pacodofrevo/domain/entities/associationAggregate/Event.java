@@ -25,7 +25,8 @@ public class Event {
     
     private int participantsAmount;
 
-  
+    @ManyToOne
+    @JoinColumn(name = "associationId")
     private Association association;
 
     private String associationId;
