@@ -1,6 +1,7 @@
 package com.backend.pacodofrevo.domain.entities.associationAggregate;
 
 import java.sql.Date;
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -24,8 +25,7 @@ public class Event {
     
     private int participantsAmount;
 
-    @ManyToOne
-    @JoinColumn(name = "associationId")
+  
     private Association association;
 
     private String associationId;
@@ -38,13 +38,5 @@ public class Event {
 
     private String updatedBy;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
+  
 }
