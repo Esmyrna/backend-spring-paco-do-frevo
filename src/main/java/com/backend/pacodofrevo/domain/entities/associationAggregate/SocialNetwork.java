@@ -34,6 +34,8 @@ public class SocialNetwork {
     @Column(name = "updatedAt")
     private Date updatedAt;
 
+    @ManyToOne
+    @JoinColumn(name = "associationId")
     private Association association;
 
  
