@@ -15,11 +15,11 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String eventType;
-    
     private Date dateOfAccomplishment;
-
     private int participantsAmount;
 
+    @ManyToOne
+    @JoinColumn(name = "associationId")
     private Association association;
 
     private String associationId;
