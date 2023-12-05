@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
