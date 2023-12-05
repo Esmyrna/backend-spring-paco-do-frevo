@@ -19,7 +19,6 @@ public class PhoneNumber {
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
-
     @ManyToOne
     @JoinColumn(name = "contactId", insertable = false, updatable = false)
     private Contact contact;
