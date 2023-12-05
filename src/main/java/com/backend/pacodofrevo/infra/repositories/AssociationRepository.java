@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface AssociationRepository extends JpaRepository<Association, String>, IAssociationRepository {
     List<Association> findAll();
-    Optional<Association> findById(String id);
+    Optional<Association> findById(Long id);
     Association save(Association association);
-    void delete(String id);
+    void delete(Long id);
 }

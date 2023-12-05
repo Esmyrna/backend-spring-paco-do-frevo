@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface IAssociationService {
     List<Association> getAll();
-    Optional<Association> getById(String id);
+    Optional<Association> getById(Long id);
     Association createAssociation(Association association);
-    void deleteAssociation(String id);
+    void deleteAssociation(Long id);
 }

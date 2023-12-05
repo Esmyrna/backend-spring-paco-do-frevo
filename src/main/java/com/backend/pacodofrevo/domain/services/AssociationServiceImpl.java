@@ -17,12 +17,12 @@ public class AssociationServiceImpl implements IAssociationService {
 
     @Override
     public List<Association> getAll() {
-        return null;
+        return associationRepository.findAll();
     }
 
     @Override
-    public Optional<Association> getById(String id) {
-        return Optional.empty();
+    public Optional<Association> getById(Long id) {
+        return associationRepository.findById(id);
     }
 
     @Override
@@ -31,7 +31,9 @@ public class AssociationServiceImpl implements IAssociationService {
     }
 
     @Override
-    public void deleteAssociation(String id) {
-
+    public void deleteAssociation(Long id) {
+        Optional<Association> existingAssociationEntity = associationRepository.findById(id);
+        Association existingAssociation = existingAssociationEntity.get();
+        associationRepository.delete(existingAssociation);
     }
 }
