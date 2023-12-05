@@ -4,7 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,7 +28,7 @@ public class Contact {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
