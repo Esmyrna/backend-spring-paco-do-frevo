@@ -26,8 +26,10 @@ public class Contact {
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
     private List<PhoneNumber> phoneNumbers;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-
+    
+    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
     private String createdBy;
@@ -39,7 +41,7 @@ public class Contact {
     private Association association;
 
     private String associationId;
-    
+
     public void setCreationStamps(String userId) {
         this.createdBy = userId;
     }
