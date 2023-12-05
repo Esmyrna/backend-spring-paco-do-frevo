@@ -9,5 +9,6 @@ public interface IAssociationService {
     List<Association> getAll();
     Optional<Association> getById(Long id);
     Association createAssociation(Association association);
+    Association updateAssociation(Long id, Association association);
     void deleteAssociation(Long id);
 }

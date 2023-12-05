@@ -15,6 +15,15 @@ public class Event {
     private String eventType;
     private Date dateOfAccomplishment;
     private int participantsAmount;
+
+    public Association getAssociation() {
+        return association;
+    }
+
+    public void setAssociation(Association association) {
+        this.association = association;
+    }
+
     @ManyToOne
     @JoinColumn(name = "associationId")
     private Association association;

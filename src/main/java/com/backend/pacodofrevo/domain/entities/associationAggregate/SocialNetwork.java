@@ -23,11 +23,16 @@ public class SocialNetwork {
     private Date createdAt;
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
+
+    public Association getAssociation() {
+        return association;
+    }
+
+    public void setAssociation(Association association) {
+        this.association = association;
+    }
+
     @ManyToOne
     @JoinColumn(name = "associationId")
     private Association association;
-
- 
-   
-
 }

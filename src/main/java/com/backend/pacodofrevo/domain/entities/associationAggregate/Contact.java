@@ -20,6 +20,15 @@ public class Contact {
     private String id;
     private String addressTo;
     private String email;
+
+    public List<PhoneNumber> getPhoneNumbers() {
+        return phoneNumbers;
+    }
+
+    public void setPhoneNumbers(List<PhoneNumber> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
+    }
+
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
     private List<PhoneNumber> phoneNumbers;
     @Temporal(TemporalType.TIMESTAMP)
@@ -28,6 +37,15 @@ public class Contact {
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
+
+    public Association getAssociation() {
+        return association;
+    }
+
+    public void setAssociation(Association association) {
+        this.association = association;
+    }
+
     @OneToOne
     @JoinColumn(name = "associationId")
     private Association association;

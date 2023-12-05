@@ -14,7 +14,7 @@ import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name = "associations-addresses")
-public class AssociationAddresses {
+public class AssociationAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", columnDefinition = "uuid")
@@ -27,6 +27,14 @@ public class AssociationAddresses {
     private String state;
     private String country;
     private String zipCode;
+
+    public Association getAssociation() {
+        return association;
+    }
+
+    public void setAssociation(Association association) {
+        this.association = association;
+    }
 
     @OneToOne(mappedBy = "address")
     private Association association;

@@ -19,9 +19,16 @@ public class PhoneNumber {
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
     @ManyToOne
     @JoinColumn(name = "contactId", insertable = false, updatable = false)
     private Contact contact;
-
-
 }

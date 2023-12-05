@@ -47,7 +47,7 @@ public class Association {
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "association_address_id")
-    private AssociationAddresses address;
+    private AssociationAddress address;
 
     @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SocialNetwork> socialNetworks;
@@ -74,4 +74,179 @@ public class Association {
         throw new UnsupportedOperationException("Method not implemented.");
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getFoundationDate() {
+        return foundationDate;
+    }
+
+    public void setFoundationDate(Date foundationDate) {
+        this.foundationDate = foundationDate;
+    }
+
+    public String getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(String addressId) {
+        this.addressId = addressId;
+    }
+
+    public ArrayList<String> getColors() {
+        return colors;
+    }
+
+    public void setColors(ArrayList<String> colors) {
+        this.colors = colors;
+    }
+
+    public String getAssociationType() {
+        return associationType;
+    }
+
+    public void setAssociationType(String associationType) {
+        this.associationType = associationType;
+    }
+
+    public int getActiveMembers() {
+        return activeMembers;
+    }
+
+    public void setActiveMembers(int activeMembers) {
+        this.activeMembers = activeMembers;
+    }
+
+    public boolean isSharedWithAResidence() {
+        return isSharedWithAResidence;
+    }
+
+    public void setSharedWithAResidence(boolean sharedWithAResidence) {
+        isSharedWithAResidence = sharedWithAResidence;
+    }
+
+    public boolean isHasOwnedHeadquarters() {
+        return hasOwnedHeadquarters;
+    }
+
+    public void setHasOwnedHeadquarters(boolean hasOwnedHeadquarters) {
+        this.hasOwnedHeadquarters = hasOwnedHeadquarters;
+    }
+
+    public boolean isLegalEntity() {
+        return isLegalEntity;
+    }
+
+    public void setLegalEntity(boolean legalEntity) {
+        isLegalEntity = legalEntity;
+    }
+
+    public String getCNPJ() {
+        return CNPJ;
+    }
+
+    public void setCNPJ(String CNPJ) {
+        this.CNPJ = CNPJ;
+    }
+
+    public boolean isCanIssueOwnReceipts() {
+        return canIssueOwnReceipts;
+    }
+
+    public void setCanIssueOwnReceipts(boolean canIssueOwnReceipts) {
+        this.canIssueOwnReceipts = canIssueOwnReceipts;
+    }
+
+    public String getAssociationHistoryNotes() {
+        return associationHistoryNotes;
+    }
+
+    public void setAssociationHistoryNotes(String associationHistoryNotes) {
+        this.associationHistoryNotes = associationHistoryNotes;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdateAt() {
+        return UpdateAt;
+    }
+
+    public void setUpdateAt(Date updateAt) {
+        UpdateAt = updateAt;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+    }
+
+    public AssociationAddress getAddress() {
+        return address;
+    }
+
+    public void setAddress(AssociationAddress address) {
+        this.address = address;
+    }
+
+    public List<SocialNetwork> getSocialNetworks() {
+        return socialNetworks;
+    }
+
+    public void setSocialNetworks(List<SocialNetwork> socialNetworks) {
+        this.socialNetworks = socialNetworks;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
+    public List<Member> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<Member> members) {
+        this.members = members;
+    }
+
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
 }
