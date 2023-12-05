@@ -34,7 +34,6 @@ public class Contact {
     private String createdBy;
 
     private String updatedBy;
-
  
     private Association association;
 
