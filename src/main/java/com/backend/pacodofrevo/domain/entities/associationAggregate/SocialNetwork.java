@@ -2,15 +2,10 @@ package com.backend.pacodofrevo.domain.entities.associationAggregate;
 
 import java.sql.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "social-networks")
 public class SocialNetwork {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

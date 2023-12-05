@@ -3,7 +3,8 @@ package com.backend.pacodofrevo.domain.entities.associationAggregate;
 import jakarta.persistence.*;
 
 import java.util.Date;
-
+@Entity
+@Table(name = "phone-numbers")
 public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
