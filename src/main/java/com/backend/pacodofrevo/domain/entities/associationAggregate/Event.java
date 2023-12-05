@@ -1,6 +1,7 @@
 package com.backend.pacodofrevo.domain.entities.associationAggregate;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -8,14 +9,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.TemporalType;
 
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
+   
     private String eventType;
+   
     private Date dateOfAccomplishment;
+    
     private int participantsAmount;
 
     @ManyToOne
@@ -31,4 +37,14 @@ public class Event {
     private String createdBy;
 
     private String updatedBy;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
 }
