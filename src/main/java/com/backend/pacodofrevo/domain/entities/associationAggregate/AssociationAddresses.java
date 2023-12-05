@@ -19,21 +19,13 @@ public class AssociationAddresses {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", columnDefinition = "uuid")
     private String id;
-
     private String addressSite;
-
     private String number;
-
     private String complement;
-
     private String district;
-
     private String city;
-
     private String state;
-
     private String country;
-
     private String zipCode;
 
     @OneToOne(mappedBy = "address")

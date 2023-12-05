@@ -13,29 +13,18 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
-
     private String name;
-
     private String surname;
-
     private String role;
-
     private int actuationTimeInMonths;
-
     private boolean isFrevoTheMainRevenueIncome;
-
     @ManyToOne
     @JoinColumn(name = "associationId")
     private Association association;
-
     private String associationId;
-
     private Date createdAt;
-
     private Date updatedAt;
-
     private String createdBy;
-
     private String updatedBy;
 
    

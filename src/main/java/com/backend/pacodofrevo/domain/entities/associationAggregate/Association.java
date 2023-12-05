@@ -28,37 +28,21 @@ public class Association {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     private Date foundationDate;
-
     private String addressId;
-
     private ArrayList<String> colors;
-
     private String associationType;
-
     private int activeMembers;
-
     private boolean isSharedWithAResidence;
-
     private boolean hasOwnedHeadquarters;
-
     private boolean isLegalEntity;
-
     private String CNPJ;
-
     private boolean canIssueOwnReceipts;
-
     private String associationHistoryNotes;
-
     private Date createdAt;
-
     private Date UpdateAt;
-
     private String createdBy;
-
     private String updateBy;
 
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)

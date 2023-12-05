@@ -12,25 +12,16 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
-   
     private String eventType;
-   
     private Date dateOfAccomplishment;
-    
     private int participantsAmount;
-
     @ManyToOne
     @JoinColumn(name = "associationId")
     private Association association;
-
     private String associationId;
-
     private Date createdAt;
-
     private Date updatedAt;
-
     private String createdBy;
-
     private String updatedBy;
 
   
