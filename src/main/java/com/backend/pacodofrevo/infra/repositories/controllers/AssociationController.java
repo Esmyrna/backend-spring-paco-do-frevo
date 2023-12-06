@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
+@RequestMapping("/associations")
+
 public class AssociationController {
     private final AssociationServiceImpl associationService;
     @Autowired
@@ -17,17 +20,10 @@ public class AssociationController {
         this.associationService = associationService;
     }
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<Association>> getAllAssociations() {
         List<Association> associations = associationService.getAll();
         return new ResponseEntity<>(associations, HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Association> getAssociationById(@PathVariable Long id) {
-        Optional<Association> association = associationService.getById(id);
-        return association.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
    @PostMapping
@@ -36,19 +32,42 @@ public class AssociationController {
         return new ResponseEntity<>(createdAssociation, HttpStatus.CREATED);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Association> getAssociationById(@PathVariable String id) {
+        try {
+            Long associationId = Long.parseLong(id);
+            Optional<Association> association = associationService.getById(associationId);
+            return association.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                    .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        } catch (NumberFormatException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @PutMapping("/{id}")
-    public ResponseEntity<Association> updateAssociation(@PathVariable Long id, @RequestBody Association association) {
-        Association updatedAssociation = associationService.updateAssociation(id, association);
-        if (updatedAssociation != null) {
-            return new ResponseEntity<>(updatedAssociation, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    public ResponseEntity<Association> updateAssociation(@PathVariable String id, @RequestBody Association association) {
+        try {
+            Long associationId = Long.parseLong(id);
+            Association updatedAssociation = associationService.updateAssociation(associationId, association);
+            if (updatedAssociation != null) {
+                return new ResponseEntity<>(updatedAssociation, HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (NumberFormatException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteAssociation(@PathVariable Long id) {
-        associationService.deleteAssociation(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<Void> deleteAssociation(@PathVariable String id) {
+        try {
+            Long associationId = Long.parseLong(id);
+            associationService.deleteAssociation(associationId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (NumberFormatException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
+
 }

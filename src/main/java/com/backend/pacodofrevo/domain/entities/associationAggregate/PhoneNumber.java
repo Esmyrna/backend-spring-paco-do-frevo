@@ -8,15 +8,11 @@ import java.util.Date;
 public class PhoneNumber {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String countryCode;
     private String areaCode;
     private String number;
-    private String contactId;
-    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updatedAt")
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
@@ -32,11 +28,11 @@ public class PhoneNumber {
     @JoinColumn(name = "contactId", insertable = false, updatable = false)
     private Contact contact;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -62,14 +58,6 @@ public class PhoneNumber {
 
     public void setNumber(String number) {
         this.number = number;
-    }
-
-    public String getContactId() {
-        return contactId;
-    }
-
-    public void setContactId(String contactId) {
-        this.contactId = contactId;
     }
 
     public Date getCreatedAt() {

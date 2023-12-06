@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String name;
     private String surname;
     private String role;
@@ -27,17 +27,17 @@ public class Member {
     @ManyToOne
     @JoinColumn(name = "associationId")
     private Association association;
-    private String associationId;
+
     private Date createdAt;
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -79,14 +79,6 @@ public class Member {
 
     public void setFrevoTheMainRevenueIncome(boolean frevoTheMainRevenueIncome) {
         isFrevoTheMainRevenueIncome = frevoTheMainRevenueIncome;
-    }
-
-    public String getAssociationId() {
-        return associationId;
-    }
-
-    public void setAssociationId(String associationId) {
-        this.associationId = associationId;
     }
 
     public Date getCreatedAt() {

@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String eventType;
     private Date dateOfAccomplishment;
     private int participantsAmount;
@@ -25,17 +25,17 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "associationId")
     private Association association;
-    private String associationId;
+
     private Date createdAt;
     private Date updatedAt;
     private String createdBy;
     private String updatedBy;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -63,13 +63,6 @@ public class Event {
         this.participantsAmount = participantsAmount;
     }
 
-    public String getAssociationId() {
-        return associationId;
-    }
-
-    public void setAssociationId(String associationId) {
-        this.associationId = associationId;
-    }
 
     public Date getCreatedAt() {
         return createdAt;

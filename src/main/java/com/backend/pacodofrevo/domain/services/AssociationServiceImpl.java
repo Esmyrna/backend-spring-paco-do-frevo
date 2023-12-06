@@ -4,10 +4,12 @@ import com.backend.pacodofrevo.domain.entities.associationAggregate.Association;
 import com.backend.pacodofrevo.domain.usecases.IAssociationService;
 import com.backend.pacodofrevo.infra.repositories.AssociationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AssociationServiceImpl implements IAssociationService {
     @Autowired
     private AssociationRepository associationRepository;
@@ -49,7 +51,6 @@ public class AssociationServiceImpl implements IAssociationService {
 
             existingAssociation.setName(association.getName());
             existingAssociation.setFoundationDate(association.getFoundationDate());
-            existingAssociation.setAddressId(association.getAddressId());
             existingAssociation.setColors(association.getColors());
             existingAssociation.setAssociationType(association.getAssociationType());
             existingAssociation.setActiveMembers(association.getActiveMembers());

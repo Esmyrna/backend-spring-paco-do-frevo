@@ -9,14 +9,12 @@ import jakarta.persistence.*;
 public class SocialNetwork {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
     private String socialNetworkType;
     private String url;
     private String createdBy;
     private String updatedBy;
-    @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
-    @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt;
 
     public Association getAssociation() {
@@ -29,12 +27,12 @@ public class SocialNetwork {
     @JoinColumn(name = "associationId")
     private Association association;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public Long setId(Long id) {
+       return  this.id = id;
     }
 
     public String getSocialNetworkType() {

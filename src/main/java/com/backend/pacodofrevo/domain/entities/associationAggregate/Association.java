@@ -30,7 +30,6 @@ public class Association {
     private Long id;
     private String name;
     private Date foundationDate;
-    private String addressId;
     private ArrayList<String> colors;
     private String associationType;
     private int activeMembers;
@@ -96,14 +95,6 @@ public class Association {
 
     public void setFoundationDate(Date foundationDate) {
         this.foundationDate = foundationDate;
-    }
-
-    public String getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(String addressId) {
-        this.addressId = addressId;
     }
 
     public ArrayList<String> getColors() {
