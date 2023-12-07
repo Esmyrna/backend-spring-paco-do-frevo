@@ -1,0 +1,12 @@
+com\backend\pacodofrevo\domain\entities\associationAggregate\AssociationAddress.class
+com\backend\pacodofrevo\domain\services\AssociationServiceImpl.class
+com\backend\pacodofrevo\domain\entities\associationAggregate\Event.class
+com\backend\pacodofrevo\domain\entities\associationAggregate\Contact.class
+com\backend\pacodofrevo\domain\usecases\IAssociationService.class
+com\backend\pacodofrevo\infra\repositories\controllers\AssociationController.class
+com\backend\pacodofrevo\domain\entities\associationAggregate\Member.class
+com\backend\pacodofrevo\infra\repositories\AssociationRepository.class
+com\backend\pacodofrevo\domain\entities\associationAggregate\Association.class
+com\backend\pacodofrevo\domain\entities\associationAggregate\PhoneNumber.class
+com\backend\pacodofrevo\PacoDoFrevoApplication.class
+com\backend\pacodofrevo\domain\entities\associationAggregate\SocialNetwork.class

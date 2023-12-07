@@ -1,0 +1,12 @@
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\Association.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\Event.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\infra\repositories\AssociationRepository.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\infra\repositories\controllers\AssociationController.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\Contact.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\AssociationAddress.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\usecases\IAssociationService.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\SocialNetwork.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\Member.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\services\AssociationServiceImpl.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\domain\entities\associationAggregate\PhoneNumber.java
+C:\Users\Aluno\Desktop\backend-spring-paco-do-frevo-main\src\main\java\com\backend\pacodofrevo\PacoDoFrevoApplication.java
