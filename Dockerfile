@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk
 COPY target/paco-do-frevo-0.0.1-SNAPSHOT.jar /app/paco-do-frevo.jar
 WORKDIR /app
 EXPOSE 8080
