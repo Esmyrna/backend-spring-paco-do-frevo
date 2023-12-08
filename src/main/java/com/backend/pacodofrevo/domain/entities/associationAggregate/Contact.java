@@ -3,6 +3,8 @@ package com.backend.pacodofrevo.domain.entities.associationAggregate;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 
@@ -16,6 +18,7 @@ public class Contact {
     private String addressTo;
     private String email;
     @OneToMany(mappedBy = "contact", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<PhoneNumber> phoneNumbers;
 
     private Date createdAt;
@@ -25,6 +28,7 @@ public class Contact {
     private String updatedBy;
     @OneToOne
     @JoinColumn(name = "associationId")
+    @JsonBackReference
     private Association association;
 
     public void setCreationStamps(String userId) {
@@ -33,9 +37,7 @@ public class Contact {
     public void setUpdateStamps(String userId) {
         this.updatedBy = userId;
     }
-    public boolean isValid() {
-        throw new UnsupportedOperationException("Method not implemented.");
-    }
+
     public List<PhoneNumber> getPhoneNumbers() {
         return phoneNumbers;
     }

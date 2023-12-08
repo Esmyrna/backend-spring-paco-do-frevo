@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,22 +45,26 @@ public class Association {
     private String createdBy;
     private String updateBy;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "association_address_id")
+    @JsonManagedReference
     private AssociationAddress address;
 
-    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<SocialNetwork> socialNetworks;
 
-    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Event> events;
 
-    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Member> members;
 
-    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "association", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Contact> contacts;
-    
 
     public void setCreationStamps(String userId) {
         this.createdBy = userId;
@@ -67,10 +72,6 @@ public class Association {
 
     public void setUpdateStamps(String userId) {
         this.updateBy = userId;
-    }
-
-    public boolean isValid() {
-        throw new UnsupportedOperationException("Method not implemented.");
     }
 
     public Long getId() {

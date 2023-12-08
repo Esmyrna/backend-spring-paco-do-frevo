@@ -1,5 +1,6 @@
 package com.backend.pacodofrevo.domain.entities.associationAggregate;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -26,6 +27,7 @@ public class PhoneNumber {
     }
     @ManyToOne
     @JoinColumn(name = "contactId", insertable = false, updatable = false)
+    @JsonBackReference
     private Contact contact;
 
     public Long getId() {

@@ -2,6 +2,7 @@ package com.backend.pacodofrevo.domain.entities.associationAggregate;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,6 +26,7 @@ public class SocialNetwork {
     }
     @ManyToOne
     @JoinColumn(name = "associationId")
+    @JsonBackReference
     private Association association;
 
     public Long getId() {

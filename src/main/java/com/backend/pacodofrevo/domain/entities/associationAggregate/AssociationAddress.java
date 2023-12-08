@@ -2,6 +2,7 @@ package com.backend.pacodofrevo.domain.entities.associationAggregate;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +17,7 @@ public class AssociationAddress {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", columnDefinition = "uuid")
-    private String id;
+    private Long id;
     private String addressSite;
     private String number;
     private String complement;
@@ -35,6 +36,7 @@ public class AssociationAddress {
     }
 
     @OneToOne(mappedBy = "address")
+    @JsonBackReference
     private Association association;
 
     private Date createdAt;
@@ -54,15 +56,11 @@ public class AssociationAddress {
         this.updatedBy = userId;
     }
 
-    public boolean isValid() {
-        throw new UnsupportedOperationException("Method not implemented.");
-    }
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
